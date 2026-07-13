@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<kml>
+  <GroundOverlay>
+    <description>14</description>
+    <name>14.jp2</name>
+    <name>14</name>
+    <LookAt>
+      <longitude>-72.649217695130901</longitude>
+      <latitude>-39.977356783013391</latitude>
+      <tilt>0</tilt>
+      <range>1429133.688889809</range>
+      <heading>-0.01069694192713931</heading>
+    </LookAt>
+    <Icon>14.jp2</Icon>
+    <LatLonBox>
+      <north>-39.300083310453566</north>
+      <south>-40.654630255573224</south>
+      <east>-71.554282098233628</east>
+      <west>-73.744153292028173</west>
+      <rotation>-0.01069694192713931</rotation>
+    </LatLonBox>
+  </GroundOverlay>
+</kml>
