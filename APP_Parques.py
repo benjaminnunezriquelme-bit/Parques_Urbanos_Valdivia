@@ -19,24 +19,24 @@ st.markdown("Exploración espacial de áreas verdes, infraestructura y métricas
 
 @st.cache_data
 def cargar_parques():
-    gdf = gpd.read_file(r"/home/nunez93/Escritorio/APLICACIONES SIG/Trabajo Final/Parques Valdivia.gpkg")
+    gdf = gpd.read_file("data/Parques Valdivia.gpkg")
     return gdf.to_crs(epsg=4326)
 
 @st.cache_data
 def cargar_vial():
     # REEMPLAZA POR EL NOMBRE EXACTO DE TU ARCHIVO DE RED VIAL
-    gdf = gpd.read_file(r"/home/nunez93/Escritorio/APLICACIONES SIG/Semana_15/TRABAJO FINAL/red_vial_reproyectada_cortado_union.gpkg") 
+    gdf = gpd.read_file("data/red_vial_reproyectada_cortado_union.gpkg") 
     return gdf.to_crs(epsg=4326)
 
 @st.cache_data
 def cargar_limite():
     # REEMPLAZA POR EL NOMBRE EXACTO DE TU ARCHIVO DE LÍMITE URBANO
-    gdf = gpd.read_file(r"/home/nunez93/Escritorio/APLICACIONES SIG/Trabajo Final/limite_urbano_Valdivia_reproy.gpkg")
+    gdf = gpd.read_file("data/limite_urbano_Valdivia_reproy.gpkg")
     return gdf.to_crs(epsg=4326)
 
 @st.cache_data
 def cargar_y_procesar_raster():
-    with rasterio.open(r"/home/nunez93/Escritorio/APLICACIONES SIG/Trabajo Final/DEM_RECORTADO_COMUNA_VALDIVIA.tif") as src:
+    with rasterio.open("data/DEM_RECORTADO_COMUNA_VALDIVIA.tif") as src:
         factor_reduccion = 10
         out_shape = (src.count, int(src.height / factor_reduccion), int(src.width / factor_reduccion))
         data = src.read(1, out_shape=out_shape, resampling=rasterio.enums.Resampling.bilinear)
